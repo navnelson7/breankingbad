@@ -19,8 +19,10 @@ const Botton = styled.button`
     border: 2px solid black;
 `;
 function App() {
-  const consultarApi =() => {
-    console.log("Consultando...")
+  const consultarApi = async () => {
+    const api = await fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes')
+    const frase = await api.json();
+    console.log(frase[0]);
   }
 
   return (
